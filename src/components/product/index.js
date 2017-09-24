@@ -22,12 +22,12 @@ class Product extends React.Component{
 	onAddProduct(nextId, title){
 		
 		let id = nextId; 
-		let newItem = {id, title};
+		let newProduct = {id, title};
 
 		this.setState((prevState, props) => {
 			return {
 				items: [...prevState.items,
-					newItem],
+					newProduct],
 				nextId : prevState.nextId + 1
 			};
 		});
