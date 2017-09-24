@@ -15,6 +15,6 @@ let propertyWithRedux = compose(
 
 let ComposeProperty = compose(
 	withTitle    
-)(propertyWithRedux, "Properties");
+)(propertyWithRedux, "Properties HOC");
 
 export default ComposeProperty;

@@ -23,7 +23,7 @@ export default class Property extends React.Component{
 
 		return (
 			<div>
-				<Title title="Properties" />
+				<Title title="Properties Container" />
 				<PropertyItem items={this.state.data.items}/>
 			</div>
 		);

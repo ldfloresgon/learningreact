@@ -16,6 +16,11 @@ npm start
 
 ## Changelog 
 
+### v0.2
+Features:
+
+    - React Router Dom
+    
 ### v0.1
 Features:
 
@@ -40,3 +45,5 @@ Features:
 - [React Bootstrap](https://react-bootstrap.github.io/)
 - [Recompose](https://github.com/acdlite/recompose)
 - [ESLint](https://github.com/eslint/eslint)
+- [React Router DOM](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
+- [React Training / React Rouer](https://reacttraining.com/react-router/web/guides/philosophy)

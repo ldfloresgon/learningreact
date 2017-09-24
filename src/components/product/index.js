@@ -43,7 +43,7 @@ class Product extends React.Component{
 	render(){
 		return (
 			<div>
-				<Title title="Products" />
+				<Title title="Products Container" />
 				<ProductItem items={this.state.items} />              
 				<AddProduct onAddProduct={this.onAddProduct} nextId={this.state.nextId} />
 			</div>
