@@ -28,6 +28,7 @@ Features:
         - HOC
     - React Bootstrap
     - Recompose
+    - ESlint
 
 
 ## Documentation
@@ -38,3 +39,4 @@ Features:
 - [Learning React](https://www.amazon.com/Learning-React-Functional-Development-Redux/dp/1491954620/ref=sr_1_1?s=books&ie=UTF8&qid=1506007190&sr=1-1&keywords=learning+react)
 - [React Bootstrap](https://react-bootstrap.github.io/)
 - [Recompose](https://github.com/acdlite/recompose)
+- [ESLint](https://github.com/eslint/eslint)
