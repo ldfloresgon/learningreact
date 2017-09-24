@@ -1,5 +1,4 @@
 import constants from "../constants";
-import products from "../../api/products";
 
 export const addProduct = (id, title) => {
 	return {

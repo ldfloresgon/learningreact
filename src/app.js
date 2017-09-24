@@ -1,12 +1,10 @@
-import React, {Component} from "react";
+import React from "react";
 import {Provider} from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 import configureStore from "./redux/store/configureStore";
 import initialState from "./redux/store/initialState";
 import "./app.scss";
 import * as Bootstrap from "react-bootstrap";
-import ContainerExample from "./components/containerexample";
-import HocExample from "./components/hocexample";
 import routes, { RouteWithSubRoutes } from "./routes";
 import Navigation from "./navigation";
 

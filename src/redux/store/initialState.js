@@ -14,4 +14,18 @@ let initialState =
 };
 
 
+if (sessionStorage)
+{
+	let productItems = JSON.parse(sessionStorage.getItem("storeProductItems"));
+	let nextId = productItems
+		? productItems.length + 1 
+		: 3;
+
+	if (productItems){
+		initialState.products.items = productItems;
+		initialState.products.nextId = nextId;
+	}
+ 
+}
+
 export default initialState;

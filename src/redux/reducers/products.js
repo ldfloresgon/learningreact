@@ -3,12 +3,13 @@ import constants from "../constants";
 const products = (state = [], action) => {
 	switch (action.type) {
 	case constants.ADD_PRODUCT:
+	{
 		let id = action.payload.id;
 		let title = action.payload.title;
 
 		let item = {id, title};
-			
-		return Object.assign(
+		
+		let newState = Object.assign(
 			{}, 
 			state, {
 				items : [
@@ -18,6 +19,13 @@ const products = (state = [], action) => {
 				nextId : state.nextId + 1
 			}
 		);
+
+		if (sessionStorage){
+			sessionStorage.setItem("storeProductItems", JSON.stringify(newState.items));
+		}
+
+		return newState;
+	}
 	default:
 		return state;
 	}

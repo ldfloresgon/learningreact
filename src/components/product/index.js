@@ -1,8 +1,6 @@
 import React from "react";
-import { connect } from "react-redux";
 import ProductItem from "./item";
 import products from "../../api/products";
-import { addProduct } from "../../redux/actions";
 import Title from "../title";
 import AddProduct from "./addProduct";
 
@@ -24,18 +22,30 @@ class Product extends React.Component{
 		let id = nextId; 
 		let newProduct = {id, title};
 
-		this.setState((prevState, props) => {
-			return {
+		this.setState((prevState) => {
+			let newState = {
 				items: [...prevState.items,
 					newProduct],
 				nextId : prevState.nextId + 1
 			};
+
+			if (sessionStorage){
+				sessionStorage.setItem("productItems", JSON.stringify(newState.items));
+			}
+
+			return newState;
 		});
+
+		
 	}
 
 	componentDidMount(){
+		let productItems = JSON.parse(sessionStorage.getItem("productItems")) || products.items;
+		let nextId = productItems.length + 1 || 3;
+
 		this.setState({
-			items : products.items
+			items : productItems,
+			nextId : nextId
 		});
 	}
 
