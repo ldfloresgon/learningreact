@@ -28,7 +28,7 @@ let withAddProduct = (WrapperComponent) => (props) =>  {
 			<WrapperComponent props={props} />
 			<WithAddProductRedux />
 		</div>
-	)
+	);
 };
 
 let productWithRedux = compose(	

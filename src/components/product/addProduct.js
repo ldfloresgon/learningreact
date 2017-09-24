@@ -11,7 +11,7 @@ let AddProduct = ({onAddProduct = f=>f, nextId = 0}) => {
 			return;
 		}
 
-        onAddProduct(nextId, title);
+		onAddProduct(nextId, title);
 	};
     
 	return (

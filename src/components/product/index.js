@@ -14,7 +14,7 @@ class Product extends React.Component{
 		this.state = {
 			items : [],
 			nextId : 3
-		}
+		};
 
 		this.onAddProduct = this.onAddProduct.bind(this);
 	}
