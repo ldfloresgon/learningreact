@@ -38,6 +38,6 @@ let productWithRedux = compose(
 
 let ComposeProduct = compose(
 	withTitle
-)(productWithRedux, "Products HOC");
+)(productWithRedux, "Products HOC with Redux");
 
 export default ComposeProduct;

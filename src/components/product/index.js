@@ -53,7 +53,7 @@ class Product extends React.Component{
 	render(){
 		return (
 			<div>
-				<Title title="Products Container" />
+				<Title title="Products Container with traditional state" />
 				<ProductItem items={this.state.items} />              
 				<AddProduct onAddProduct={this.onAddProduct} nextId={this.state.nextId} />
 			</div>
