@@ -1,6 +1,8 @@
 import React from "react";
 import products from "../../../api/products";
 
+const sessionStorageKey = "productItemsRenderProps";
+
 //container component
 export default class ProductContainer extends React.Component{
 	constructor(props){
@@ -15,7 +17,7 @@ export default class ProductContainer extends React.Component{
 	}
 	
 	componentDidMount(){
-		let productItems = JSON.parse(sessionStorage.getItem("productItems")) || products.items;
+		let productItems = JSON.parse(sessionStorage.getItem(sessionStorageKey)) || products.items;
 		let nextId = productItems.length + 1 || 3;
         
 		this.setState({
@@ -29,20 +31,29 @@ export default class ProductContainer extends React.Component{
 		let newProduct = {id, title};
         
 		this.setState((prevState) => {
-			let newState = {
-				items: [...prevState.items,
-					newProduct],
-				nextId : prevState.nextId + 1
-			};
-
-			if (sessionStorage){
-				sessionStorage.setItem("productItems", JSON.stringify(newState.items));
-			}
-
+			let newState =this.getNewState(prevState, newProduct);
+			this.updateSessionStorage(newState);
 			return newState;
 		});		
 	}
-    
+	
+	getNewState(prevState, newProduct){
+		return {
+			items: [
+				...prevState.items,
+				newProduct
+			],
+			nextId : prevState.nextId + 1
+		};
+	}
+
+	updateSessionStorage(newState){
+		if (sessionStorage){
+			sessionStorage.setItem(sessionStorageKey, JSON.stringify(newState.items));
+		}
+	}
+	
+
 	render(){
 		let state = this.state;
 		let onAddProduct = this.onAddProduct;
