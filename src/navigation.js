@@ -3,6 +3,25 @@ import { withRouter  } from "react-router-dom";
 import * as  Bootstrap from "react-bootstrap";
 
 
+let pages = [
+	{
+		"eventKey" : "1",
+		"url" : "/hoc",
+		"title" : "High Order Component"
+	},
+	{
+		"eventKey" : "2",
+		"url" : "/container",
+		"title" : "Container Presentational Components"
+	},
+	{
+		"eventKey" : "3",
+		"url" : "/render-props",
+		"title" : "Render props"
+	}
+];
+
+
 class Navigation extends React.Component{
 	constructor(props){
 		super(props);
@@ -59,15 +78,14 @@ class Navigation extends React.Component{
 						activeKey={this.state.selectedTab} 
 						onSelect={this.handleSelect}>
 
-						<Bootstrap.NavItem 
-							eventKey="1"
-							href="/hoc">High Order Component
-						</Bootstrap.NavItem>
+						{pages.map((page, index) => {
 
-						<Bootstrap.NavItem 
-							eventKey="2" 
-							href="/container">Container Presentational Components
-						</Bootstrap.NavItem>
+							return (<Bootstrap.NavItem key={index}
+								eventKey={page.eventKey}
+								href={page.url}>{page.title}
+							</Bootstrap.NavItem>);
+						})}
+
 					</Bootstrap.Nav>        
 				</Bootstrap.Row>          
 			</div>  

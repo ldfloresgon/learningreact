@@ -2,6 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import ContainerExample from "./components/containerexample";
 import HocExample from "./components/hocexample";
+import RenderPropsExample from "./components/RenderPropsExample";
 
 const routes = [
 	{ 
@@ -11,6 +12,10 @@ const routes = [
 	{
 		path: "/container",
 		component:  ContainerExample
+	},
+	{
+		path: "/render-props",
+		component:  RenderPropsExample
 	}
 ];
 
