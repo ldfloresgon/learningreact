@@ -16,6 +16,12 @@ npm start
 
 ## Changelog 
 
+### v0.3
+Features:
+
+    - Patterns:
+        - Render prop
+
 ### v0.2
 Features:
 
@@ -47,3 +53,5 @@ Features:
 - [ESLint](https://github.com/eslint/eslint)
 - [React Router DOM](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
 - [React Training / React Rouer](https://reacttraining.com/react-router/web/guides/philosophy)
+- [Render prop pattern - medium](https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce)
+- [Render prop pattern - youtube](https://www.youtube.com/watch?v=BcVAq3YFiuc)
