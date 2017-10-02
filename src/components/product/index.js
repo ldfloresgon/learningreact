@@ -59,6 +59,9 @@ class Product extends React.Component{
 		});
 	}
 
+	shouldComponentUpdate(nextProps, nextState){
+		return this.state.items !== nextState.items;
+	}
 
 	render(){
 		return (

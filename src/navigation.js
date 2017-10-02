@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter  } from "react-router-dom";
+import { withRouter } from "react-router";
 import * as  Bootstrap from "react-bootstrap";
 
 
@@ -21,7 +21,6 @@ let pages = [
 	}
 ];
 
-
 class Navigation extends React.Component{
 	constructor(props){
 		super(props);
@@ -33,15 +32,34 @@ class Navigation extends React.Component{
 		this.handleSelect = this.handleSelect.bind(this);
 	}
 
-	handleSelect(selectedTab){
-		
-		this.updateState(selectedTab);
 
+	shouldComponentUpdate(nextProps){
+		return nextProps.location.pathname !== this.props.location.pathname;
+	}
+
+	componentWillReceiveProps(nextProps){
+		let page = pages.filter((page) => page.url == nextProps.location.pathname);
+		if (page){
+			let actualselectedTab = this.state.selectedTab;
+
+			if (actualselectedTab !== page[0].eventKey){
+				this.linkTo(page[0].eventKey);
+			}
+		}
+	}
+
+	handleSelect(selectedTab){
+		this.linkTo(selectedTab);
+	}
+  
+	linkTo(selectedTab){
+		this.updateState(selectedTab);
+		
 		this.updateSessionStorage(selectedTab);
 
 		this.loadPathFromNavigation(selectedTab);
 	}
-  
+
 	updateState(selectedTab){
 		this.setState({
 			selectedTab : selectedTab			
@@ -68,6 +86,12 @@ class Navigation extends React.Component{
 	}
 
 	render(){
+		let navItems = pages.map((page, index) => {
+			return (<Bootstrap.NavItem key={index}
+				eventKey={page.eventKey}
+				href={page.url}>{page.title}
+			</Bootstrap.NavItem>);
+		});
 		return (
 			<div>
 				<Bootstrap.PageHeader><small>Patrones</small></Bootstrap.PageHeader>
@@ -78,13 +102,7 @@ class Navigation extends React.Component{
 						activeKey={this.state.selectedTab} 
 						onSelect={this.handleSelect}>
 
-						{pages.map((page, index) => {
-
-							return (<Bootstrap.NavItem key={index}
-								eventKey={page.eventKey}
-								href={page.url}>{page.title}
-							</Bootstrap.NavItem>);
-						})}
+						{navItems}
 
 					</Bootstrap.Nav>        
 				</Bootstrap.Row>          

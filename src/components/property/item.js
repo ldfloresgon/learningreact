@@ -3,6 +3,7 @@ import { ListGroup, ListGroupItem } from "react-bootstrap";
 
 //presentational component
 const PropertyItem = ({items = []}) => {
+
 	let properties = items.map((property, key) => 
 	{
 		return (
@@ -16,7 +17,7 @@ const PropertyItem = ({items = []}) => {
 	});
 
 	return (
-		<div>   
+		<div>
 			{properties}
 		</div>
 	);

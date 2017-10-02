@@ -53,6 +53,9 @@ export default class ProductContainer extends React.Component{
 		}
 	}
 	
+	shouldComponentUpdate(nextProps, nextState){
+		return this.state.items !== nextState.items;
+	}
 
 	render(){
 		let state = this.state;

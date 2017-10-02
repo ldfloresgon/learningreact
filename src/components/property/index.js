@@ -13,6 +13,10 @@ export default class Property extends React.Component{
 		};
 	}
 
+	shouldComponentUpdate(nextProps, nextState){
+		return this.state.data.items !== nextState.data.items;
+	}
+
 	componentDidMount(){
 		this.setState({
 			data : properties
@@ -20,7 +24,6 @@ export default class Property extends React.Component{
 	}
 
 	render(){
-
 		return (
 			<div>
 				<Title title="Properties Container with traditional state" />
