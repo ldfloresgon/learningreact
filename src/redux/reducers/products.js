@@ -2,6 +2,15 @@ import constants from "../constants";
 
 const products = (state = [], action) => {
 	switch (action.type) {
+	case constants.REMOVE_ALL_PRODUCTS:
+		return Object.assign(
+			{}, 
+			state,
+			{
+				items : [],
+				nextId : 1
+			}
+		);
 	case constants.ADD_PRODUCT:
 	{
 		let id = action.payload.id;

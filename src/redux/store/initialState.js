@@ -24,8 +24,7 @@ if (sessionStorage)
 	if (productItems){
 		initialState.products.items = productItems;
 		initialState.products.nextId = nextId;
-	}
- 
+	} 
 }
 
 export default initialState;

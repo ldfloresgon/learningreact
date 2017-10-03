@@ -6,3 +6,9 @@ export const addProduct = (id, title) => {
 		payload: {id, title}
 	};
 };
+
+export const removeAllProducts = () => {
+	return {
+		type: constants.REMOVE_ALL_PRODUCTS,
+	};
+};
