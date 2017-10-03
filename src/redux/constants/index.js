@@ -1,6 +1,2 @@
-let constants = {
-	ADD_PRODUCT : "ADD_PRODUCT",
-	REMOVE_ALL_PRODUCTS : "REMOVE_ALL_PRODUCTS"
-};
-
-export default constants;
+export const ADD_PRODUCT = "ADD_PRODUCT";
+export const REMOVE_ALL_PRODUCTS = "REMOVE_ALL_PRODUCTS";

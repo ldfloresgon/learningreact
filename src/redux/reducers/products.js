@@ -1,17 +1,23 @@
-import constants from "../constants";
+
+import { ADD_PRODUCT, REMOVE_ALL_PRODUCTS } from "../constants";
+import productsApi from "../../api/products";
 
 const products = (state = [], action) => {
 	switch (action.type) {
-	case constants.REMOVE_ALL_PRODUCTS:
+
+	case REMOVE_ALL_PRODUCTS:
+		sessionStorage.removeItem("storeProductItems");
+
 		return Object.assign(
 			{}, 
 			state,
 			{
-				items : [],
-				nextId : 1
+				items : productsApi.items,
+				nextId : 3
 			}
 		);
-	case constants.ADD_PRODUCT:
+
+	case ADD_PRODUCT:
 	{
 		let id = action.payload.id;
 		let title = action.payload.title;

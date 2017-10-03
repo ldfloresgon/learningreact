@@ -1,14 +1,14 @@
-import constants from "../constants";
+import { ADD_PRODUCT, REMOVE_ALL_PRODUCTS } from "../constants";
 
 export const addProduct = (id, title) => {
 	return {
-		type: constants.ADD_PRODUCT, 
+		type: ADD_PRODUCT, 
 		payload: {id, title}
 	};
 };
 
 export const removeAllProducts = () => {
 	return {
-		type: constants.REMOVE_ALL_PRODUCTS,
+		type: REMOVE_ALL_PRODUCTS,
 	};
 };

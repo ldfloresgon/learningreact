@@ -19,7 +19,7 @@ class Product extends React.Component{
 				<ProductItem items={this.props.items} />              
 				<AddProduct onAddProduct={this.props.onAddProduct} nextId={this.props.nextId} />
 				<br/>
-				<Button bsStyle="warning" onClick={this.props.removeAllProducts}>Remove all products</Button>
+				<Button bsStyle="warning" onClick={this.props.removeAllProducts}>Restart products from products api</Button>
 			</div>
 		);
 	}
