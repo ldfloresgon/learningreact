@@ -1,3 +1,6 @@
 node_modules/
-npm-debug.log
+*debug.log
 reduxTodos/
+*lock.json
+dist/
+dockerfile.txt

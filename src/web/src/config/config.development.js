@@ -1,0 +1,1 @@
+export let endpointapi = "http://localhost:3000";

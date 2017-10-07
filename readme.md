@@ -1,20 +1,36 @@
 Learning React
 =========================
 
-It's a little project to explore react's world
-
-## Installation
-
+It's a little project to explore react's world and nodejs. Inside there are 2 projects:
 ```
-npm install
+- React UI 
+- Rest api for fetching and stored data from React UI.
 ```
 
-## Run
+## Get Started
+
+The next scripts will install dependencies and start in development mode.
 ```
-npm start
+- Windows: ./run.ps1
+- Linux: ./run.sh
+```
+
+## Docker Support
+
+```
+docker-compose up
 ```
 
 ## Changelog 
+
+### v0.4
+Features:
+
+    - React UI
+    - Rest Api
+    - Add docker support
+    - Build script for production
+    - Axios for fetching data
 
 ### v0.3
 Features:

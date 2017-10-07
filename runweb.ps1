@@ -1,0 +1,1 @@
+Invoke-Expression "cd src; cd web; npm install; npm run dev"

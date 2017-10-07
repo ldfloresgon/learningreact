@@ -1,0 +1,1 @@
+export let endpointapi = "http://dockerhost:3000";
